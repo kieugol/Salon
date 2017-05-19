@@ -1,0 +1,175 @@
+#fileuploader{
+
+
+
+	cursor: pointer;
+
+}
+
+.tab-img td{
+
+	padding: 0 !important;
+
+}
+
+.tab-img img{
+
+	width:170px ;
+
+	height: 50px; 
+
+}
+
+#tb_home img {
+
+	max-width: 100px !important;
+
+	height: 100px;
+
+}
+
+.reload{
+
+	font-size: 30px;
+
+}
+
+.error{
+
+    color: red !important;
+
+    font-weight: normal !important;
+
+  }
+
+ table img{
+
+    width: 128px;
+
+ 	height: auto;
+
+ }
+
+ .close{
+
+ 	font-size: 40px !important;
+
+ 	opacity: 1 !important;
+
+ 	color: rgb(198, 28, 28) !important;
+
+ 	outline: none !important;
+
+    top: -8px !important;
+
+ }
+
+ /*  hide show change background Menu admin*/
+
+ .no-print{
+
+ 	display: none !important;
+
+ }
+
+ .content-header{
+
+ 	padding: 0 15px;
+
+ }
+
+ .form-control{
+
+
+                display: inline-block !important;
+
+            }
+
+            .table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td{
+
+                border-top: none !important;
+
+            }
+
+            .error{
+
+                color: red !important;
+
+                font-weight: normal !important;
+
+            }
+
+            .modal-lg{
+
+                width: 1120px !important;
+
+            }
+
+.list-gallery{
+
+                list-style: none;
+
+            }
+
+            .list-gallery li{
+
+                float: left;
+
+                padding: 5px;
+
+            }
+
+.img-list{
+
+    text-align: left;
+
+    height: 800px;
+
+    overflow: scroll;
+
+}
+
+.img-list li{
+
+    display: inline-block;
+
+    list-style:none;
+
+    padding: 10px;
+
+}
+
+.box-list{
+
+    border-top: 2px solid #f56954; 
+
+}
+.img-hot{
+    position: absolute;
+   margin-top: -100px;
+    z-index: 999;
+}
+.img-hot img{
+     width: 30px !important;
+   height: 30px !important;
+}
+.img-new{
+     position: absolute;
+   margin-top: -100px;
+   margin-left: 35px;
+    z-index: 999;
+}
+.img-new img{
+    width: 30px !important;
+   height: 30px !important;
+}
+.img-sale{
+     position: absolute;
+   margin-top: -100px;
+   margin-left: 70px;
+    z-index: 999;
+}
+.img-sale img{
+     width: 30px !important;
+   height: 30px !important;
+}

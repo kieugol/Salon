@@ -1,0 +1,115 @@
+<?php
+
+/*
+|--------------------------------------------------------------------------
+| Application Routes
+|--------------------------------------------------------------------------
+| Here is where you can register all of the routes for an application.
+| It's a breeze. Simply tell Laravel the URIs it should respond to
+| and give it the Closure to execute when that URI is requested.
+ */
+
+/*------------------------------ admin------------------------------------------------------------------------ */
+Route::get('admin', function () {
+	if (Session::has('permission')
+		&& Session::get('permission') == md5('$2y$10$wJPcY4RNfgZcMbXRdj4C3uKpUWGx0DtLvY3yUEy5MmqR2KgDaqORS')) {
+		return Redirect::to("administrator");
+	} else {
+		return View::make('admin.login.adminLogin');
+	}
+});
+Route::controller('home', 'HomeController');
+Route::group(array("prefix" => "administrator", "before" => "checkAdminLogin"), function () {
+	Route::get('/', 'HomeController@index');
+	// profile
+	Route::controller('profile', 'AdminProfileController');
+	// media
+	Route::controller('media', 'AdminMediaController');
+	// products
+	Route::controller('products', 'AdminProductsController');
+	// Products Categories
+	Route::controller('productsCategories', 'AdminProductsCatController');
+	// Products madein
+	Route::controller('productsMade', 'AdminProductsMadeinController');
+	// Articles
+	Route::controller('articles', 'AdminArticlesController');
+	// Articles Categories
+	Route::controller('articlesCategories', 'AdminArticlesCatController');
+	if (Session::get('level') == md5(3)) {
+		Route::controller('user', 'UserController');
+	}
+	// Menu
+	Route::controller('menu', 'AdminMenuController');
+	// Contact
+	Route::controller('contact', 'AdminContactController');
+	// Config
+	Route::controller('profile', 'AdminProfileController');
+	// Slider
+	Route::controller('slider', 'AdminSliderController');
+	// email
+	Route::controller('email', 'AdminEmailController');
+	// province
+	Route::controller('province', 'AdminProvinceController');
+	// district
+	Route::controller('district', 'AdminDistrictController');
+	// Salon
+	Route::controller('salon', 'AdminSalonController');
+	// Event
+	Route::controller('event', 'AdminEventController');
+	// Event categories
+	Route::controller('eventCat', 'AdminEventCatController');
+	// Service
+	Route::controller('service', 'AdminServiceController');
+	// Slider
+	Route::controller('slider', 'AdminSliderController');
+	// HiringController
+	Route::controller('hiringad', 'AdminHiringController');
+});
+
+/*------------------------------ User----------------------------------------------------------------------------------------------- */
+Route::get('/', function () {
+	return View::make('user.body.index');
+});
+
+Route::get('/event', function () {
+	return View::make('user.body.event');
+});
+
+Route::get('/event', function () {
+	return View::make('user.body.event');
+});
+
+//customer register
+Route::controller('customer', 'CustomerController');
+
+// Register member
+Route::controller('member', 'MemberController');
+Route::get('/dang-ky-thanh-vien.html', 'MemberController@LoadRegister');
+Route::get('/dang-nhap.html', 'MemberController@loadLogIn');
+//salon
+//Route::controller('salon', 'SalonController');
+Route::get('/salon/{alias}.html', 'SalonController@LoadSalonFilterProvince');
+Route::get('/salon/{alias1}/{alias2}.html', 'SalonController@LoadSalonFilterDistrict');
+Route::get('/salon/{alias_1}/{alias_2}/{alias_3}.html', 'SalonController@LoadSalonDetails');
+//event
+Route::get('/su-kien/{alias1}.html', 'EventController@LoadEventCat');
+Route::get('/su-kien/{alias1}/{alias2}/{id_event}.html', 'EventController@LoadEventDetails');
+Route::get('/su-kien/dat-hen/{alias1}/{alias2}/{id_event}.html', 'EventController@LoadEventBookTicket');
+Route::controller('event-ticket', 'EventController');
+//Hiring user
+Route::controller('hiring', 'HiringController');
+Route::get('/tuyen-dung/{alias}.html', 'HiringController@LoadHiringFilterProvince');
+Route::get('/tuyen-dung/{alias1}/{alias2}.html', 'HiringController@LoadHiringFilterDistrict');
+Route::get('/tuyen-dung/{alias1}/{alias2}/{alias3}/{alias4}.html', 'HiringController@loadHiringDetails');
+//news
+Route::get('/tin-tuc.html', 'ArticlesController@loadNewsHome');
+Route::get('/tin-tuc/{alias1}/{alias2}/{alias3}.html', 'ArticlesController@loadArticlesDetails');
+// Product
+Route::controller('products', 'ProductsController');
+Route::get('san-pham.html', 'ProductsController@LoadAllProducts');
+Route::get('san-pham/{alias1}/{alias2}.html', 'ProductsController@LoadProductsDetails');
+// Tuyen dung
+
+App::missing(function ($exception) {
+	return Response::view('user.body.404', array(), 404);
+});

@@ -1,0 +1,168 @@
+<?php
+
+$_images = Config::get('site.url_image');
+
+$_thumb = Config::get('site.url_thumb');
+
+$_css = Config::get('site.url_css');
+
+$_js = Config::get('site.url_js');
+
+?>
+
+
+
+<?php $__env->startSection('css'); ?>
+
+  <title>Địa chỉ làm tóc</title>
+
+  <link rel="stylesheet" href="<?php echo $_css . 'custom.css'; ?>" type="text/css">
+
+  <link rel="stylesheet" href="<?php echo $_css . 'bootstrap.css'; ?>" type="text/css">
+
+  <link rel="stylesheet" href="<?php echo $_css . 'theme-color.css'; ?>" type="text/css">
+
+  <link rel="stylesheet" href="<?php echo $_css . 'responsive.css'; ?>" type="text/css">
+
+  <link rel="stylesheet" href="<?php echo $_css . 'owl.carousel.css'; ?>" type="text/css">
+
+  <link rel="stylesheet" href="<?php echo $_css . 'jquery.bxslider.css'; ?>" type="text/css">
+
+  <link rel="stylesheet" href="<?php echo $_css . 'prettyPhoto.css'; ?>" type="text/css">
+
+  <link rel="stylesheet" href="<?php echo $_css . 'font-awesome.min.css'; ?>" type="text/css">
+
+  <link rel="stylesheet" href="<?php echo $_css . 'icomoon.css'; ?>" type="text/css">
+
+<?php $__env->stopSection(); ?>
+
+
+
+<?php $__env->startSection('content'); ?>
+
+  <div class="cp_inner-banner">
+
+
+
+    <div class="cp-inner-image">
+
+      <img src="<?php echo $_images; ?>/inner-services-img.jpg" alt="">
+
+    </div>
+
+
+
+<!--     <div class="cp_breadcrumb-holder">
+
+      <div class="container">
+
+        <ul class="breadcrumb">
+
+          <li><a href="#">Trang chủ</a></li>
+
+          <li><a href="#">Hệ thống salon tóc</a></li>
+
+          <li><a href="#">TP Hồ Chí Minh</a></li>
+
+          <li class="active"><a href="#">Quận 2</a></li>
+
+        </ul>
+
+      </div>
+
+    </div> -->
+
+
+
+  </div>
+
+
+
+
+
+  <div class="cp_main">
+
+    <section class="cp_gallery-section pd-tb80">
+
+      <div class="container">
+
+        <div class="cp-heding-style1"><h2>Hệ thống salon tóc <?php echo $district->name_province; ?></h2></div>
+
+        <div class="cp_portfolioFilter">
+
+          <a href="#" data-filter="*" class="current"><?php echo $district->name_district; ?></a>
+
+        </div>
+
+        <ul class="portfolioContainer pretty-gallery">
+
+        <?php foreach($list_salon as $salon): ?>
+ <?php $alias_salon = Asset('/salon') . '/' . $salon->alias_province . '/' . $salon->alias_district . '/' . $salon->alias_salon . '.html'?>
+          <li class="cp_filter<?php echo $salon->id_district; ?>">
+
+            <div class="cp_gallery-box">
+
+              <figure class="thumb">
+
+                <img src="<?php echo $_thumb . $salon->thumb_salon; ?>" alt="">
+
+                <figcaption>
+
+                  <div class="holder">
+                      <a href="<?php echo $alias_salon; ?>">
+                        <i class="fa fa-search"></i>
+                      </a>
+                  </div>
+
+                </figcaption>
+
+              </figure>
+
+              <div class="text">
+
+                <strong><a href="<?php echo $alias_salon; ?>"><?php echo $salon->name_salon; ?></a></strong>
+
+                <span><?php echo $salon->address_salon; ?></span>
+
+              </div>
+
+            </div>
+
+          </li>
+
+        <?php endforeach; ?>
+
+        </ul>
+
+      </div>
+
+    </section>
+
+  </div>
+
+<?php $__env->stopSection(); ?>
+
+
+
+<?php $__env->startSection('script'); ?>
+
+  <script type="text/javascript" src="<?php echo $_js . 'html5shiv.js'; ?>"></script>
+
+  <script type="text/javascript" src="<?php echo $_js . 'jQuery.1.11.3.js'; ?>"></script>
+
+  <script type="text/javascript" src="<?php echo $_js . 'bootstrap.min.js'; ?>"></script>
+
+  <script type="text/javascript" src="<?php echo $_js . 'migrate.js'; ?>"></script>
+
+  <script type="text/javascript" src="<?php echo $_js . 'owl.carousel.min.js'; ?>"></script>
+
+  <script type="text/javascript" src="<?php echo $_js . 'jquery.bxslider.min.js'; ?>"></script>
+
+  <script type="text/javascript" src="<?php echo $_js . 'jquery.isotope.js'; ?>"></script>
+
+  <script type="text/javascript" src="<?php echo $_js . 'jquery.prettyPhoto.js'; ?>"></script>
+
+  <script type="text/javascript" src="<?php echo $_js . 'custom-script.js'; ?>"></script>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('user.main', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

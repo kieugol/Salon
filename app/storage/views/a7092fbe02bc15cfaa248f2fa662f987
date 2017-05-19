@@ -1,0 +1,116 @@
+﻿<?php
+$_images = Config::get('site.url_image');
+$_thumb = Config::get('site.url_thumb');
+$_css = Config::get('site.url_css');
+$_js = Config::get('site.url_js');
+$is_padding = 0;
+$pdTop = '';
+?>
+
+<?php $__env->startSection('css'); ?>
+  <title>Sự kiện</title>
+  <link rel="stylesheet" href="<?php echo $_css . 'custom.css'; ?>" type="text/css">
+  <link rel="stylesheet" href="<?php echo $_css . 'bootstrap.css'; ?>" type="text/css">
+  <link rel="stylesheet" href="<?php echo $_css . 'theme-color.css'; ?>" type="text/css">
+  <link rel="stylesheet" href="<?php echo $_css . 'responsive.css'; ?>" type="text/css">
+  <link rel="stylesheet" href="<?php echo $_css . 'owl.carousel.css'; ?>" type="text/css">
+  <link rel="stylesheet" href="<?php echo $_css . 'jquery.bxslider.css'; ?>" type="text/css">
+  <link rel="stylesheet" href="<?php echo $_css . 'prettyPhoto.css'; ?>" type="text/css">
+  <link rel="stylesheet" href="<?php echo $_css . 'font-awesome.min.css'; ?>" type="text/css">
+  <link rel="stylesheet" href="<?php echo $_css . 'icomoon.css'; ?>" type="text/css">
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+  <div class="cp_inner-banner">
+    <div class="cp-inner-image">
+      <img src="<?php echo $_images; ?>/inner-event-1-img.jpg" alt="">
+    </div>
+  </div>
+
+<?php
+$service = new Service();
+?>
+ <div class="cp_main">
+  <!-- new style -->
+    <section class="cp_gallery-section pd-tb80">
+      <div class="container">
+        <div class="cp-heding-style1"><h2>Sự kiện tại TPHCM</h2></div>
+        <div class="cp_portfolioFilter">
+          <a href="#" data-filter="*" class="current">Tất cả</a>
+        <?php foreach($list_event_cat as $key => $eventcat): ?>
+          <a href="#" data-filter=".cp_filter<?php echo $key; ?>"><?php echo $eventcat[1]; ?></a>
+        <?php endforeach; ?>
+        </div>
+        <ul class="portfolioContainer pretty-gallery">
+        <?php foreach($list_event as $event): ?>
+		<?php
+			$alias_event = Asset('/su-kien') . '/' . $event->alias_event_categories . '/' . $event->alias_event . '/' . $event->id_event . '.html';
+
+			// get price for event
+			$arrIdService = explode(',', $event->id_service);
+			$list_service = $service->getServiceForSalon($arrIdService);
+			$price = 0;
+			$str_percent = '';
+			$price_sale = 0;
+			if (count ($list_service) > 0) {
+				foreach ($list_service as $k) {
+					$price += $k->price_service;
+				}
+			} else {
+				// calculating percent price
+				$percent_current = 100 - $event->percent_event;
+				$price_current = ($event->price_sale_event * $event->percent_event) / $percent_current;
+				$price = round($price_current + $event->price_sale_event);
+			}
+
+			if ($event->price_sale_event > 0) {
+				$str_percent = ' <span class="price_sale">' . number_format($price, 0, ",", ".") . 'VND</span>';
+				$price_sale = number_format($event->price_sale_event, 0, ",", ".");
+			} else {
+				$price_sale = number_format($price, 0, ",", ".");
+			}
+		?>
+          <li class="cp_filter<?php echo $event->id_event_categories; ?>">
+            <div class="cp_gallery-box event">
+              <figure class="thumb">
+                <img src="<?php echo $_thumb . $event->thumb_event; ?>" style="max-width:263px" alt="">
+                <figcaption>
+                  <div class="holder">
+                      <a href="<?php echo $alias_event; ?>">
+                        <i class="fa fa-search"></i>
+                      </a>
+                  </div>
+                </figcaption>
+              </figure>
+              <div class="text">
+                <strong><a href="<?php echo $alias_event; ?>"><?php echo $event->name_event; ?></a></strong>
+                <h4 class="price"><span><?php echo $price_sale; ?> VND<?php echo $str_percent; ?></span></h4>
+                <h4><?php echo $event->name_salon; ?> <span style="font-size:15px">(<?php echo $event->name_district; ?>)</span></h4>
+              <?php if($event->price_sale_event > 0): ?>
+                 <div class="discounticonblk-phantram">
+                    <span class="giovangtxtsp-phantram">Sale</span>
+                    <span class="giovangdiscounttxtsp-phantram"><?php echo $event->percent_event; ?>%</span>
+                </div>
+              <?php endif; ?>
+              </div>
+            </div>
+          </li>
+        <?php endforeach; ?>
+        </ul>
+      </div>
+    </section>
+</div>
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('script'); ?>
+  <script type="text/javascript" src="<?php echo $_js . 'html5shiv.js'; ?>"></script>
+  <script type="text/javascript" src="<?php echo $_js . 'jQuery.1.11.3.js'; ?>"></script>
+  <script type="text/javascript" src="<?php echo $_js . 'bootstrap.min.js'; ?>"></script>
+  <script type="text/javascript" src="<?php echo $_js . 'migrate.js'; ?>"></script>
+  <script type="text/javascript" src="<?php echo $_js . 'owl.carousel.min.js'; ?>"></script>
+  <script type="text/javascript" src="<?php echo $_js . 'jquery.bxslider.min.js'; ?>"></script>
+  <script type="text/javascript" src="<?php echo $_js . 'jquery.isotope.js'; ?>"></script>
+  <script type="text/javascript" src="<?php echo $_js . 'jquery.prettyPhoto.js'; ?>"></script>
+  <script type="text/javascript" src="<?php echo $_js . 'custom-script.js'; ?>"></script>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('user.main', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

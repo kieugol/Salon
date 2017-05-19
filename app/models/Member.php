@@ -1,0 +1,26 @@
+<?php
+
+use Illuminate\Auth\Reminders\RemindableInterface;
+use Illuminate\Auth\Reminders\RemindableTrait;
+use Illuminate\Auth\UserInterface;
+use Illuminate\Auth\UserTrait;
+
+class Member extends Eloquent implements UserInterface, RemindableInterface {
+
+
+	/**
+	 * The database table used by the model.
+	 *
+	 * @var string
+	 */
+	public static $rules = array();
+	protected $table = 'users';
+	protected $fillable = array('idUser', 'gid', 'name_users', 'thumb_users'
+		'address_users', 'phone_users', 'username', 'password', 'email_users',
+		'email_users', 'enable_users', 'ip_register_users'
+	);
+		// insert data
+	public function insert($data_pd) {
+		$this::create($data_pd);
+	}
+}

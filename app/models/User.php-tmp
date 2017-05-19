@@ -1,0 +1,170 @@
+<?php
+
+use Illuminate\Auth\Reminders\RemindableInterface;
+use Illuminate\Auth\Reminders\RemindableTrait;
+use Illuminate\Auth\UserInterface;
+use Illuminate\Auth\UserTrait;
+
+class User extends Eloquent implements UserInterface, RemindableInterface {
+
+	use UserTrait, RemindableTrait;
+
+	/**
+	 * The database table used by the model.
+	 *
+	 * @var string
+	 */
+	public static $rules = array();
+	protected $table     = 'users';
+	protected $fillable  = array('gid', 'id_social', 'is_social', 'name_users',
+		'address_users', 'phone_users', 'username', 'password', 'email',
+		'enable_users', 'lastvisitdate_users', 'id_salon',
+		'idUserGroup', 'created_at', 'updated_at',
+	);
+	// insert data
+	public function insert($data_pd) {
+		$this::create($data_pd);
+	}
+	// get All User
+	public function getAllUser() {
+		$result = $this
+		->orderBy('idUsers', 'desc')
+		->join('user_group', 'users.gid', '=', 'user_group.idUserGroup')
+		->get();
+		return $result;
+	}
+	// get user group
+	public function getAllUserGroup() {
+		$result = DB::table('user_group')
+		->get();
+		return $result;
+	}
+	// get details user
+	public function getInfoUser($name) {
+		$result = $this
+		->where('username', '=', $name)
+		->join('user_group', 'gid', '=', 'user_group.idUserGroup')
+		->first();
+		return $result;
+	}
+
+	public function checkUserSalon() {
+
+	}
+	// get details user
+	public function getInfoUserApi($id, $email) {
+		$result = $this
+		->where('id_social', '=', $id)
+		->where('email', '=', $email)
+		->join('user_group', 'gid', '=', 'user_group.idUserGroup')
+		->first();
+		return $result;
+	}
+
+	// get details info update user
+	public function getUserUpdate($id) {
+		$result = $this
+		->where('idUsers', '=', $id)
+		->first();
+		return $result;
+	}
+	public function updateUser($id, $data_pd) {
+		$this->where('idUsers', '=', $id)
+		     ->update($data_pd);
+	}
+	//enable User
+	public function enable($id, $status) {
+		if ($status == 0) {
+			$status = 1;
+		} else {
+			$status = 0;
+		}
+
+		$this
+		->where('idUsers', '=', $id)
+		->update(array(
+				'enable_users' => $status,
+			));
+	}
+	//remove products
+	public function removeUser($id) {
+		$this
+		->where('idUsers', '=', $id)
+		->delete();
+	}
+	// get Level user
+	public function getLevel() {
+		$result = DB::table('user_group')->
+		select('user_group.idUserGroup', 'user_group.name')
+		->get();
+		return $result;
+	}
+
+	public function info_all_user() {
+		$value = $this
+		->join('levels', 'levels.id', '=', 'users.Level_id')
+		->select('users.id', 'users.username', 'users.firstname', 'users.lastname', 'users.email', 'users.image', 'levels.name_level')
+		->get();
+		return $value;
+	}
+	public function getInfoViaEmail($email) {
+		$value = $this
+		->where('email', '=', $email)
+		->first();
+		return $value;
+	}
+	public function get_level_id($username) {
+		return $this
+		->where('username', '=', $username)
+		->select('id', 'Level_id')
+		->get()
+		->first();
+	}
+
+	/* management logs*/
+	public function addLog($data) {
+		DB::table('logs')->insert($data);
+	}
+	public function getAllLog() {
+		$list = DB::table('logs')
+		->orderBy('idLog', 'DESC')
+		->join('users', 'name_log', '=', 'users.name_users')
+		->join('user_group', 'users.gid', '=', 'user_group.idUserGroup')
+		->get();
+		return $list;
+	}
+	public function removeLog($id) {
+		DB::table('logs')
+		->where('idLog', '=', $id)
+		->delete();
+		return true;
+	}
+	// delete ip for limitlogin
+	public function deleteIp() {
+		$ip = $_SERVER['REMOTE_ADDR'];
+		DB::table('limitlogin')
+		->where('idLimitLogin', '=', $ip)
+		->delete();
+		return true;
+	}
+	// get Ip have limitlogin
+	public function checkIp($ip) {
+		$list = DB::table('limitlogin')
+		->where('ip', '=', $ip)
+		->first();
+		return $list;
+	}
+	// insert Ip limitlogin
+	public function insertLimit($data) {
+		DB::table('limitlogin')->insert($data);
+		return true;
+	}
+	// update ip limitLogin
+	public function updateLimit($ip, $data) {
+		DB::table('limitlogin')
+		->where('ip', '=', $ip)
+		->update($data);
+		return true;
+	}
+	/* management logs*/
+}

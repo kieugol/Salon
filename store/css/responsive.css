@@ -1,0 +1,850 @@
+@media (max-width: 480px) {
+    .cp-nav-holder .cp-logo {
+        width: 100%;
+        margin: 20px 0 0;
+        text-align: center;
+    }
+    .big-salon .cp_navigation-row .cp-nav-holder .navbar-inverse {
+        margin: 0;
+    }
+    .cp-right-holder>ul>li {
+        float: inherit;
+        display: inline-block;
+    }
+    .cp-right-holder>ul>li {
+        padding: 0 15px;
+    }
+    .cp_navigation-row .navbar-inverse .navbar-toggle {
+        margin: 0;
+    }
+    #big-salon-nail .cp_navigation-row .cp-nav-holder .navbar-inverse {
+        margin: 15px 0 0;
+    }
+    #big-salon-nail .cp_logo-row .cp-right-holder {
+        float: inherit;
+    }
+    #big-salon-nail .cp-right-holder>ul>li {
+        padding: 0 10px;
+    }
+    .big-salon #wrapper .cp_banner .banner-caption {
+        top: 30px;
+    }
+    .cp_banner .banner-caption em {
+        font-size: 14px;
+        line-height: 14px;
+    }
+    .cp-btn-checkout {
+        min-width: 140px;
+        font-size: 16px;
+        line-height: 18px;
+        padding: 10px 0px;
+    }
+    #cp_header .cp_navigation-row .cp-right-holder {
+        padding: 20px 0px 10px;
+        text-align: center;
+    }
+    .big-salon .cp_breadcrumb-holder h1 {
+        font-size: 28px;
+        line-height: 30px;
+    }
+    .cp-heding-style1 h2,
+    .cp-heding-style2 h2 {
+        font-size: 30px;
+        line-height: 30px;
+    }
+    .big-salon .services-item .services-caption {
+        top: 0;
+    }
+    .big-salon .cp_our-parallax-section .left-holder h3 {
+        font-size: 30px;
+        line-height: 30px;
+    }
+    .big-salon .cp_our-parallax-section .left-holder strong {
+        font-size: 44px;
+        line-height: 44px;
+    }
+    .cp_our-parallax-section .right-holder {
+        width: 100%;
+    }
+    .cp_banner .banner-caption2 h1 {
+        font-size: 30px;
+        line-height: 30px;
+    }
+    .footer-logo {
+        width: 100%;
+        text-align: center;
+    }
+    .cp_banner .banner-caption2 {
+        bottom: 200px;
+    }
+    .cp-events-box .text h2 {
+        font-size: 24px;
+        line-height: 24px;
+    }
+    .cp-comments-box .text {
+        padding-left: 80px;
+    }
+    .cp_blockquote p {
+        font-size: 18px;
+    }
+    .big-salon .cp-events-box .top-holder .date-box {
+        margin: -50px 0 0 3px;
+        position: relative;
+        z-index: 999;
+    }
+    .big-salon .cp-events-box .map-holder {
+        margin: 20px 0 30px;
+        width: 100%;
+    }
+    .coundown-holder1 #countdown_dashboard .dash {
+        margin: 0 0 10px 26px
+    }
+    .coundown-holder1 #countdown_dashboard .dash:after,
+    .coundown-holder1 #countdown_dashboard .dash:before {
+        display: none;
+    }
+    .cp_accodian-box .container_cp_accor {
+        overflow: hidden;
+        padding: 15px 0 17px;
+    }
+    .cp_comingsoon-section1 .cp-heding-style3 h2 {
+        font-size: 22px;
+        line-height: 22px;
+    }
+    .cp_comingsoon-section1 p {
+        margin: 0 0 30px;
+    }
+    .cp_comingsoon-section1 .coundown-holder2 #countdown_dashboard2 .dash {
+        width: 90px;
+        margin: 0 20px 30px 0;
+    }
+    .cp_footer-section1 h2 {
+        font-size: 20px;
+        line-height: 20px;
+    }
+    .cp_footer-section1 .buy-now {
+        padding: 10px 0;
+    }
+    .big-salon .cp_comingsoon-section1 .coundown-holder2 #countdown_dashboard2 .dash {
+        width: 70px;
+        margin: 0 15px 30px 0;
+    }
+    .big-salon .coundown-holder2 #countdown_dashboard2 .dash .digit {
+        width: 30px;
+        font-size: 28px;
+    }
+    .cp_comingsoon-section2 {
+        padding: 0 0 80px;
+    }
+    .coundown-holder2 #countdown_dashboard3 .dash {
+        line-height: 80px;
+    }
+    .big-salon .comingsoon-holder p {
+        font-size: 16px;
+        margin: 0 0 15px;
+    }
+    .big-salon .comingsoon-holder form input[type="text"] {
+        min-width: 100%;
+        margin: 0 0 20px;
+    }
+    .big-salon .cp-p404-content {
+        width: 100%;
+        padding: 0 20px;
+    }
+    .big-salon .cp-p404-content .p404-title-2 {
+        margin: 0 0 15px;
+    }
+    .big-salon .p404-form-holder {
+        width: 100%;
+    }
+    .big-salon .cp-heding-style3 h2 {
+        font-size: 24px;
+        line-height: 24px;
+    }
+    .cp_product-section ul.row>li {
+        float: left;
+        width: 100%;
+    }
+    .wc-proceed-to-checkout,
+    .cart_totals>h2,
+    .payment-holder>img {
+        float: left;
+        width: 100%;
+    }
+    .cart-table-row .woocommerce .shop_table td.product-thumbnail,
+    .cart-table-row .woocommerce .shop_table thead th.product-thumbnail,
+    .cart-table-row .woocommerce .shop_table .product-quantity {
+        display: none;
+    }
+    .cp_pagination-holder .pagination>li>a {
+        font-size: 12px;
+        line-height: 12px;
+        padding: 13px 10px 0;
+    }
+    .cp_footer-section3 strong {
+        width: 100%;
+        text-align: center;
+    }
+    .cart-table-row .woocommerce .shop_table .coupon input[type="text"] {
+        width: 100%;
+        margin: 0 0 20px;
+    }
+    .cart-table-row .woocommerce .shop_table .action input[type="submit"],
+    .cp_pagination-holder,
+    .cp-blog-box {
+        margin: 0 0 20px;
+    }
+    .cp-blog-box .quotes-box strong,
+    .cp-blog-box h2 {
+        font-size: 20px;
+    }
+    .cp-blog-box .bottom-holder {
+        padding: 0 0 10px;
+    }
+    .big-salon .cp_portfolioFilter a {
+        padding: 9px 9px 10px;
+        font-size: 12px;
+    }
+    ul.portfolioContainer .cp_gallery-box {
+        margin: 0;
+    }
+    .rating-holder ul>li {
+        margin: 0 20px 0 0;
+    }
+    .product .summary .product-quantity {
+        margin: 0 20px 20px 0;
+    }
+    .big-salon .cp_countdown-holder1 .countdown-section {
+        margin: 0 15px 0 0;
+    }
+    .cp_countdown-holder1 .countdown-amount {
+        font-size: 30px;
+        width: 60px;
+    }
+}
+@media (max-width: 767px) {
+    #wrapper #cp_header.cp_sticky {
+        position: absolute;
+    }
+    .big-salon #cp_header.cp_sticky .cp_navigation-row {
+        background-color: #000;
+    }
+    .big-salon #cp_header.cp_sticky {
+        position: absolute;
+    }
+    .big-salon .cp_sticky .cp_navigation-row {
+        background-color: transparent;
+        padding: 0;
+    }
+    .big-salon .cp_sticky .cp_logo-row {
+        display: block;
+    }
+    .big-salon .cp-nav-holder .navbar-inverse {
+        float: inherit;
+        width: 100%;
+        margin: -55px 0 0;
+    }
+    .cp_navigation-row .navbar-inverse .navbar-collapse {
+        border: none;
+        box-shadow: none;
+    }
+    .cp_navigation-row .navbar-inverse .navbar-toggle {
+        background: #333;
+        margin: 0;
+    }
+    #wrapper #cp_header {
+        position: relative;
+        background-color: #000;
+    }
+    #wrapper #cp_header.cp_sticky {
+        background-color: #000;
+        position: relative;
+    }
+    #big-salon-spa #wrapper #cp_header {
+        background-color: #fff;
+    }
+    #big-salon-barber-shop .cp-nav-holder .navbar-inverse {
+        float: inherit;
+    }
+    #big-salon-barber-shop .cp_navigation-row .cp-nav-holder {
+        width: 100%;
+    }
+    #big-salon-barber-shop .cp-nav-holder .cp_search-bar {
+        margin: 15px 0 13px;
+        float: left;
+        width: 100%;
+        text-align: left;
+    }
+    #big-salon-nail .cp_logo-row .cp-logo {
+        width: 100%;
+        margin: 20px 70px 20px 0;
+    }
+    #big-salon-nail .cp_logo-row .cp-right-holder {
+        position: relative;
+        z-index: 999;
+        float: left;
+    }
+    #big-salon-spa .cp_navigation-row .cp-logo {
+        margin-bottom: 20px;
+    }
+    .big-salon .cp-nav-holder .navbar-nav li ul {
+        display: none;
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        top: 0;
+    }
+    .big-salon .cp-nav-holder .navbar-nav .open>.dropdown-menu {
+        display: block;
+    }
+    .big-salon .cp-nav-holder .navbar-nav .open>.dropdown-menu>li ul {
+        left: 0;
+        display: none;
+        border: none;
+    }
+    .big-salon .cp-nav-holder .navbar-nav .open>.dropdown-menu>li:hover ul {
+        display: block;
+    }
+    .big-salon .cp-nav-holder .navbar-nav .open>.dropdown-menu>li ul li a {
+        padding: 8px 15px 8px 25px;
+    }
+    .big-salon .cp-nav-holder .navbar-nav>li ul li {
+        border: none;
+    }
+    .big-salon .cp-nav-holder .navbar-nav .open .dropdown-menu>li>a,
+    .big-salon .cp-nav-holder .navbar-nav .open .dropdown-menu .dropdown-header {
+        padding: 8px 15px 8px 17px;
+        color: #fff;
+    }
+    .big-salon .cp-nav-holder .navbar-inverse .navbar-nav .open .dropdown-menu>li>a:hover,
+    .big-salon .cp-nav-holder .navbar-inverse .navbar-nav .open .dropdown-menu>li>a:focus {
+        color: #fff;
+    }
+    .cp-nav-holder .navbar-nav {
+        float: left;
+        width: 100%;
+        margin: 30px 0 0;
+    }
+    .cp-nav-holder .navbar-nav>li {
+        width: 100%;
+    }
+    .cp-nav-holder .navbar-inverse .navbar-nav>li>a {
+        line-height: 40px;
+        display: block;
+    }
+    .cp-nav-holder .navbar-nav .caret {
+        display: inline-block;
+    }
+    #big-salon-spa .cp-nav-holder .navbar-nav>li>a {
+        line-height: 40px;
+    }
+    #big-salon-spa .cp_navigation-row .cp-nav-holder .cp_search-bar {
+        margin: 0;
+        width: 100%;
+    }
+    .cp_banner .banner-caption h1 {
+        font-size: 30px;
+        line-height: inherit;
+    }
+    .cp_banner .item img {
+        width: 100%;
+    }
+    #big-salon-spa .cp_banner .banner-caption {
+        top: 30px;
+    }
+    .big-salon .cp_banner .banner-caption {
+        bottom: 0;
+        top: 120px;
+    }
+    .big-salon .cp_banner .banner-caption h1 {
+        font-size: 20px;
+    }
+    .big-salon .cp_banner .banner-caption .cp-btn-checkout {
+        //display: none;
+    }
+    #big-salon-barber-shop .cp_banner .banner-caption h1 {
+        font-size: 30px;
+        padding: 15px 0;
+    }
+    .cp_navigation-row .cp-right-holder {
+        position: relative;
+        float: left;
+        width: 100%;
+        top: 0;
+        padding: 30px 20px 10px;
+        opacity: 1;
+        visibility: visible;
+        text-align: center;
+    }
+    .cp_navigation-row {
+        padding: 0;
+    }
+    .cp_sticky .cp-nav-holder .navbar-inverse {
+        float: right;
+        width: 100%;
+    }
+    .cp-right-holder>ul>li {
+        line-height: 30px;
+        border-color: #fff;
+        display: inline-block;
+        float: inherit;
+    }
+    .cp_search-bar .cp-inner-search-bar {
+        right: inherit;
+        left: -10px;
+    }
+    .cp_inner-banner {
+        background: url(../images/inner-login-img.jpg) top center;
+        background-size: cover;
+       // min-height: 250px;
+        position: relative;
+        z-index: 99;
+    }
+    .cp_inner-banner:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        z-index: -1;
+    }
+    .cp-inner-image img {
+        //display: none;
+    }
+    .cp_banner .banner-caption2 {
+        top: 20px;
+        bottom: 0;
+    }
+    .cp_banner .banner-caption2 em {
+        font-size: 20px;
+        line-height: 20px;
+        margin: 0 0 10px;
+    }
+    .cp_banner .banner-caption2 .cp-btn-checkout {
+        display: none;
+    }
+    #cp_banner-slider2 .owl-controls {
+        bottom: -25px;
+    }
+    .cp_breadcrumb-holder {
+        padding: 80px 0 50px;
+    }
+    .cp_breadcrumb-holder h1 {
+        font-size: 40px;
+        line-height: 40px;
+    }
+    .pd-tb80 {
+        padding: 50px 0;
+    }
+    .about-text {
+        padding: 20px 0;
+    }
+    .about-text h3 {
+        font-size: 24px;
+        line-height: 20px;
+    }
+    #cp_about-slider .owl-buttons {
+        bottom: -20px;
+    }
+    .promotion-item {
+        margin: 0 0 40px;
+    }
+    .promotion-item .text {
+        padding: 25px 30px;
+    }
+    .big-salon h3 {
+        font-size: 24px;
+        line-height: 24px;
+    }
+    .promotion-item .text,
+    .promotion-item .thumb img {
+        width: 100%;
+    }
+    .promotion-item .thumb {
+        width: 100%;
+        position: inherit;
+        border: none;
+        top: 0;
+    }
+    .services-item img {
+        width: 100%;
+    }
+    .cp_our-services-section .services-item,
+    .achievement-item,
+    .ft-box-holder {
+        margin: 0 0 30px;
+    }
+    .testimonial-holder {
+        padding: 30px 20px 50px;
+    }
+    .cp_footer-section1 h2 {
+        font-size: 30px;
+        line-height: 30px;
+    }
+    .cp_brands-section ul li {
+        width: 33.33%;
+    }
+    .rates-holder .text-holder .info-hold:before,
+    .rates-holder .text-holder .info-hold:after,
+    .rates-holder .right .info-hold:before,
+    .rates-holder .right .info-hold:after {
+        display: none;
+    }
+    .services-item .services-caption {
+        top: 30%;
+    }
+    .cp_our-parallax-section .left-holder {
+        margin: 0 0 30px;
+    }
+    .cp_our-parallax-section .right-holder {
+        padding: 0;
+        width: 100%;
+    }
+    .cp_our-parallax-section .right-holder ul>li {
+        font-size: 24px;
+        line-height: 24px;
+        margin: 0 0 12px;
+    }
+    .blog-holder .text-holder {
+        padding: 20px 15px;
+    }
+    .big-salon .cp_brands-section ul li {
+        width: 50%;
+    }
+    .big-salon .cp_brands-section ul li img {
+        width: 100%;
+    }
+    .rates-holder:before,
+    .cp_rates-section2 .rates-holder:before {
+        width: 100%;
+        background-size: cover;
+        right: 0;
+        left: 0;
+    }
+    .cp_our-services-section {
+        margin: 0;
+    }
+    .cp_gallery-full-section .holder {
+        padding: 40px 20px;
+    }
+    .cp_gallery-full-section .holder h3 {
+        font-size: 40px;
+        line-height: 40px;
+        margin: 0 0 20px;
+    }
+    .cp_our-parallax-section3 {
+        padding: 80px 0;
+    }
+    .cp_our-parallax-section3 h3 {
+        line-height: 30px;
+    }
+    .cp_promotion-section3 .promotion-item .text,
+    .cp_promotion-section3 .promotion-item .thumb {
+        width: 100%;
+    }
+    .cp_our-parallax-section3 h3 span {
+        font-size: 26px;
+        line-height: 40px;
+    }
+    .pricing-item {
+        margin: 0 0 30px;
+    }
+    .pd-b80 {
+        padding: 40px 0;
+    }
+    .cp_testimonial-section:before,
+    .cp_testimonial-section:after {
+        width: 100%;
+        background-size: cover;
+    }
+    .cp-events-box .cp-thumb {
+        width: 100%;
+    }
+    .cp-events-box .text {
+        float: left;
+        width: 100%;
+    }
+    a.cp-btn-style2 {
+        min-width: 115px;
+        padding: 10px 0;
+    }
+    .cp_our-parallax-section .left-holder h3,
+    .cp_our-parallax-section .left-holder strong {
+        font-size: 50px;
+        line-height: 50px;
+    }
+    .cp_our-parallax-section .left-holder strong {
+        margin: 0 0 35px;
+    }
+    .cp-events-box .map-holder {
+        margin-bottom: 50px;
+    }
+    .cp-sidebar-box,
+    .cp-form-box .holder:last-child {
+        margin: 0 0 30px;
+    }
+    .comments-list>li ul {
+        padding: 0 0 0 30px;
+    }
+    .big-salon .portfolioContainer {
+        margin: 0 0 -30px -30px;
+    }
+    .portfolioContainer li {
+        float: left;
+        width: 100%;
+        margin: 0 28px 30px 30px;
+    }
+    .cp_portfolioFilter a {
+        padding: 10px 15px 12px;
+    }
+    .cp_gallery-box {
+        margin: 0 0 30px;
+    }
+    .cp-gallery-full>li {
+        width: 100%;
+    }
+    .cp_comingsoon-section1 {
+        padding: 70px 0;
+    }
+    .coundown-holder2 #countdown_dashboard2 .dash .digit {
+        width: 40px;
+    }
+    .coundown-holder2 #countdown_dashboard2 .dash {
+        font-size: 34px;
+    }
+    .cp-inner-comingsoon-image>img {
+        display: none;
+    }
+    .cp-inner-comingsoon-image {
+        background: url(../images/inner-commin-soon-2-img.jpg) top center;
+        background-size: cover;
+        float: left;
+        width: 100%;
+        min-height: 800px;
+    }
+    .cp_comingsoon-section2 {
+        position: relative;
+        z-index: 9999;
+    }
+    .comingsoon-holder {
+        width: 100%;
+        float: left;
+    }
+    .comingsoon-holder .coundown-holder2 {
+        margin: 0 0 30px;
+    }
+    .coundown-holder2 #countdown_dashboard3 .dash {
+        font-size: 60px;
+    }
+    .comingsoon-holder p {
+        font-size: 20px;
+        margin: 0 0 50px;
+    }
+    .comingsoon-holder form input[type="text"] {
+        margin: 0 30px 20px 0;
+    }
+    .cp_p404-section1 {
+        padding: 70px 0;
+    }
+    .cp-p404-content .p404-title-2 {
+        margin: 0 0 30px;
+    }
+    .big-salon .p404-title-2 strong {
+        font-size: 60px;
+        line-height: 60px;
+        padding: 0 0 20px;
+    }
+    .big-salon .p404-title-2::after {
+        width: 70%;
+    }
+    .cp-map-box #map_contact_2,
+    .cp-map-box #map_contact_1 {
+        height: 270px;
+    }
+    .cp-blog-box .quotes-box {
+        padding: 60px 30px 40px;
+    }
+    .cp_rates-section {
+        padding-top: 0;
+    }
+    .rates-holder {
+        text-align: center;
+    }
+    .rates-holder .text-holder,
+    .rates-holder .text-holder.right {
+        padding: 70px 0 0;
+        text-align: inherit;
+    }
+    .rates-holder .left .info-hold,
+    .rates-holder .right .info-hold {
+        padding: 0 0 50px;
+    }
+    .rates-holder .text-holder .info-hold h4 {
+        margin: 0 0 10px;
+    }
+    .big-salon #wrapper .cp_rates-section2 .rates-holder .text-holder .info-hold span {
+        padding: 0;
+        color: #000;
+    }
+    .cp_countdown-holder1 .countdown-section {
+        margin: 0 30px 0 0;
+    }
+    .cp_countdown-holder2 .countdown-section {
+        margin: 0 30px 50px 0;
+    }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+    #wrapper #cp_header {
+        position: relative;
+        background-color: #000;
+    }
+    #wrapper #cp_header.cp_sticky {
+        position: relative;
+    }
+    .cp_navigation-row .cp-right-holder {
+        opacity: 1;
+        visibility: visible;
+        top: 0;
+    }
+    .cp_navigation-row {
+        padding: 0;
+    }
+    .cp_navigation-row .cp-nav-holder .navbar-inverse {
+        width: 100%;
+    }
+    .cp-inner-comingsoon-image>img {
+        display: none;
+    }
+    .cp-inner-comingsoon-image {
+        background: url(../images/inner-commin-soon-2-img.jpg) top center;
+        background-size: cover;
+        float: left;
+        width: 100%;
+        min-height: 900px;
+    }
+    .cp-events-box .map-holder {
+        margin-bottom: 50px;
+    }
+    .rates-holder .text-holder .info-hold:before,
+    .rates-holder .text-holder .info-hold:after,
+    .rates-holder .right .info-hold:before,
+    .rates-holder .right .info-hold:after {
+        display: none;
+    }
+    .cp-gallery-full>li {
+        width: 50%;
+    }
+    .blog-holder .text-holder {
+        padding: 20px;
+    }
+    .cp-right-holder>ul>li {
+        line-height: 50px;
+    }
+    .big-salon .rates-holder:before {
+        width: 100%;
+        right: 0;
+        background-size: cover;
+    }
+    .services-item .services-caption h3 {
+        font-size: 24px;
+        line-height: 24px;
+    }
+}
+@media (min-width: 1200px) {
+    .cp_banner .banner-caption {
+        width: 920px;
+        padding: 0;
+        bottom: 60px;
+    }
+    .cp_banner .banner-caption h1 {
+        font-size: 60px;
+        line-height: 60px;
+    }
+    .cp_rates-section .bottom {
+        padding: 0 120px;
+    }
+    .cp_about-section .cp-about-holder {
+        width: 750px;
+        margin: 0 auto;
+    }
+    .cp_about-section .cp-about-holder p {
+        padding: 0 85px;
+    }
+    .cp_our-parallax-section3 h3 {
+        padding: 0 83px;
+    }
+    .rates-holder::before {
+        right: -50px;
+    }
+    .rates-holder .text-holder .info-hold h4 {
+        font-size: 30px;
+        line-height: 30px;
+    }
+    .rates-holder .left .info-hold {
+        padding: 0 0 170px;
+    }
+    .rates-holder .left .info-hold:before {
+        right: 180px;
+    }
+    .rates-holder .left .info-hold:after {
+        right: 300px;
+    }
+    .team-item {
+        margin: 0;
+    }
+    .coundown-holder2 #countdown_dashboard2 .dash {
+        margin: 0 130px 0 0;
+    }
+    .cp_p404-section2 .cp-p404-content {
+        top: 370px;
+    }
+    .p404-title-2 strong {
+        font-size: 250px;
+        line-height: 250px;
+    }
+    .cp_about-section .cp-thumb {
+        margin: 0;
+    }
+    .cp_brands-section ul li {
+        width: 12.2%;
+    }
+    .cp_our-services-section {
+        margin: 0 0 90px;
+    }
+    .cp_our-services-section .services-item {
+        margin: 0 0 -90px;
+    }
+    .cp_nail-banner .banner-caption {
+        bottom: 290px;
+    }
+    .cp_about-section .top-holder {
+        background: #fff;
+        padding: 80px 0 0;
+        margin: -160px 0 0;
+    }
+    .cp_countdown-holder1 .countdown-section {
+        margin: 0 130px 0 0;
+    }
+    .cp_countdown-holder2 .countdown-amount {
+        font-size: 90px;
+        line-height: 90px;
+    }
+    .cp_countdown-holder3 {
+        float: right;
+    }
+}
+@media (min-width: 1024px) and (max-width: 1280px) {
+    .cp_gallery-full-section .holder {
+        padding: 30px 20px;
+    }
+    .cp_gallery-full-section .holder h3 {
+        font-size: 30px;
+        line-height: 20px;
+        margin: 0 0 20px;
+    }
+    .cp_gallery-full-section .holder p {
+        margin: 0 0 15px;
+    }
+}

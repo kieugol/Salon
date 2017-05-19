@@ -1,0 +1,63 @@
+<?php $__env->startSection('seo'); ?>
+   <meta name="keywords" content="<?php echo $menus['meta_key_menus']; ?>">
+   <meta name="title" content="<?php echo $menus['meta_title_menus']; ?>">
+   <meta name="description" content="<?php echo $menus['meta_desc_menus']; ?>">
+   <title><?php echo $menus['title_menus']; ?></title>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+<script>
+  var _alias_menus = '<?php echo $menus["alias_menus"]; ?>';
+  $(".nav li").each(function() {
+    if($(this).attr('id') == _alias_menus){
+      $(this).addClass('active');
+    }
+  });
+</script>
+<div class="container hc-body-content">
+      <?php echo $__env->make('user.menu_left', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+      <!--Main Content-->
+      <div class=" hc-adv-top-content">
+           <div class="breadcrumb">
+            <ul>
+              <li><a href="<?php echo Asset('/'); ?>">Trang chủ</a></li>
+               <li><a href="<?php echo Asset('/').$menus['alias_menus'].'.html'; ?>"><img src="<?php echo Asset('store/images/breadcrumb.png'); ?>">&nbsp;<?php echo $menus['title_menus']; ?></a></li>
+              <div class="clr"></div>
+            </ul>
+          </div>
+          <div class="title-categories title-categories-add"><h2 class="clr-services"><?php echo $menus['title_menus']; ?></h2></div>
+          <section class="hc-news ">
+            <?php
+              $qty = count($list_articles);
+            ?>
+              <?php foreach($list_articles as $key =>$value): ?>
+                <div class="item-articles <?php if ($key<$qty-1) echo "br-bt" ?>" >
+                    <div class="thumnail">
+                      <a href="<?php echo Asset('/tin-tuc')."/".$list_articles[$key]->alias_articles_categories."/".$list_articles[$key]->alias_articles.".html"; ?>" title="<?php echo $list_articles[$key]->title_articles; ?>">
+                        <img src="<?php echo Asset('/store/upload/images').'/'.$list_articles[$key]->thumb_articles; ?>" alt="<?php echo $list_articles[$key]->title_articles; ?>">
+                      </a>
+                    </div>
+                    <div class="sort-content">
+                        <h3><a href="<?php echo Asset('/tin-tuc').'/'.$list_articles[$key]->alias_articles_categories.'/'.$list_articles[$key]->alias_articles.'.html'; ?>"><?php echo substr($list_articles[$key]->title_articles,0,75); ?></a></h3>
+                        <div class="clr"></div>
+                        <div class="meta-blog">
+                          <span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;<?php echo $list_articles[$key]->related_articles; ?>&nbsp;&nbsp;&nbsp;&nbsp;
+                          <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>&nbsp;<?php echo date_format( $list_articles[$key]->created_at,'j F Y'); ?>
+
+                        </div>
+                        <p class="intro-text"><?php echo mb_strimwidth($list_articles[$key]->introtext_articles,0,203,"...","utf-8"); ?></p>
+                    </div>
+                    <div class="clr"></div>
+                </div>
+              <?php endforeach; ?>
+            <div class="paginate text-center">
+              <?php echo $list_articles->links(); ?>
+
+            </div>
+          </section>
+      </div>
+      <!--End Main Content./-->
+      <?php echo $__env->make('user.adv_right', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+</div>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('user.main', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

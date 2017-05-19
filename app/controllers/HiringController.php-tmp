@@ -1,0 +1,100 @@
+<?php
+class HiringController extends \BaseController {
+	protected $layout = 'user.main';
+	public $data      = array();
+	// load details Articles
+	public function loadHiringDetails($alias) {
+		$Hiring                   = new Hiring();
+		$data['articles_details'] = $Hiring->getHiringDetails($alias);
+		$this->layout->content    = View::make('user.body.hiring_dir.hiring_details', $data);
+	}
+	public function loadRegisterHiring() {
+		$salon                 = new Salon();
+		$data                  = [];
+		$data['list_salon']    = $salon->getAllSalonProvince();
+		$this->layout->content = View::make('user.body.hiring_dir.add_new', $data);
+	}
+
+	public function postInsertHiring() {
+
+		$errMgs        = '';
+		$isErrorUpload = false;
+		$title         = Input::get('title');
+		$content       = Input::get('content');
+		$salonId       = Input::get('sl_salon');
+		//validation
+		if ($title == '') {
+			$errMgs = 'Vui lòng nhập tiêu đề!';
+		} else {
+			$salon          = new Salon();
+			$list_salon     = $salon->getAllSalonProvince();
+			$isSalonInvalid = true;
+			foreach ($list_salon as $value) {
+				if ($salonId == $value->id_salon) {
+					$isSalonInvalid = false;
+					break;
+				}
+			}
+			if ($isSalonInvalid) {
+				$errMgs = 'Salon bạn vừa chọn không hợp lệ!';
+			} else {
+				if ($content == '') {
+					$errMgs = 'Vui lòng nhập nội dung bạn muốn đăng tin!';
+				}
+			}
+		}
+
+		if (isset($_FILES['thumb'])) {
+			if ($_FILES['thumb']['error'] > 0) {
+				echo 'File Upload Bị Lỗi';
+			} else {
+				$tmpName           = $_FILES['thumb']['tmp_name'];
+				$filePath          = './store/upload/images/'.$_FILES['thumb']['name'];
+				$result            = move_uploaded_file($tmpName, $filePath);
+				$orig_image        = imagecreatefromjpeg($filePath);
+				$image_info        = getimagesize($filePath);
+				$width_orig        = $image_info[0];// current width as found in image file
+				$height_orig       = $image_info[1];// current height as found in image file
+				$width             = 1024;// new image width
+				$height            = 768;// new image height
+				$destination_image = imagecreatetruecolor($width, $height);
+				imagecopyresampled($destination_image, $orig_image, 0, 0, 0, 0, $width, $height, $width_orig, $height_orig);
+				imagejpeg($destination_image, $filePath, 100);
+				$dataFile = array(
+					'name_display' => substr($_FILES["thumb"]["name"], 0, strpos($_FILES["thumb"]["name"], '.')),
+					'name_file'    => $_FILES["thumb"]["name"],
+					'size_file'    => $_FILES["thumb"]["size"],
+					'type_file'    => '',
+				);
+				$media = new Media();
+				$media->insert($dataFile);
+			}
+		} else {
+			$isErrorUpload = true;
+		}
+
+		if ($errMgs != '') {
+			return Redirect::back()->with('message', $errMgs);
+		} else {
+			$data = [
+				'categories_id'       => 0,
+				'related_articles'    => '',
+				'alias_articles'      => $this->getAlias(Input::get('title')),
+				'title_articles'      => Input::get('title'),
+				'thumb_articles'      => $isErrorUpload?'our-section2-img.jpg':$_FILES['thumb']['name'],
+				'introtext_articles'  => Input::get('short_content'),
+				'fulltext_articles'   => Input::get('content'),
+				'id_salon'            => Input::get('sl_salon'),
+				'meta_title_articles' => Input::get('title'),
+				'meta_key_articles'   => Input::get('title'),
+				'meta_desc_articles'  => Input::get('title'),
+				'enable_articles'     => 0,
+			];
+			// call model
+			$articles = new Articles();
+			// insert
+			$articles->insert($data);
+			return Redirect::to('/')->with('message', 'Tin của bạn được đăng ký thành công!<br/>Vui lòng đợi duyệt tin từ quản trị!');
+		}
+	}
+}

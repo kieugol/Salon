@@ -1,0 +1,60 @@
+<?php
+$_images = Config::get('site.url_image');
+$_thumb = Config::get('site.url_thumb');
+$_css = Config::get('site.url_css');
+$_js = Config::get('site.url_js');
+?>
+
+<?php $__env->startSection('css'); ?>
+  <title>Page not found</title>
+  <link rel="stylesheet" href="<?php echo $_css . 'custom.css'; ?>" type="text/css">
+  <link rel="stylesheet" href="<?php echo $_css . 'bootstrap.css'; ?>" type="text/css">
+  <link rel="stylesheet" href="<?php echo $_css . 'theme-color.css'; ?>" type="text/css">
+  <link rel="stylesheet" href="<?php echo $_css . 'responsive.css'; ?>" type="text/css">
+  <link rel="stylesheet" href="<?php echo $_css . 'owl.carousel.css'; ?>" type="text/css">
+  <link rel="stylesheet" href="<?php echo $_css . 'jquery.bxslider.css'; ?>" type="text/css">
+  <link rel="stylesheet" href="<?php echo $_css . 'prettyPhoto.css'; ?>" type="text/css">
+  <link rel="stylesheet" href="<?php echo $_css . 'font-awesome.min.css'; ?>" type="text/css">
+  <link rel="stylesheet" href="<?php echo $_css . 'icomoon.css'; ?>" type="text/css">
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+<div class="cp_inner-banner">
+  <div class="cp-inner-image">
+    <img src="<?php echo $_images; ?>/inner-404-1-img.jpg" alt="">
+  </div>
+  <div class="cp_breadcrumb-holder">
+    <div class="container">
+      <h1>404</h1>
+    </div>
+  </div>
+</div>
+
+<div class="cp_main">
+
+  <section class="cp_p404-section1">
+    <div class="container">
+      <div class="cp-p404-content">
+        <div class="cp-heding-style3">
+          <h2>Opps! The <span>Page</span> is not Existed</h2>
+        </div>
+        <p>It looks like that page no longer exists. Would you like to go to <a href="<?php echo Asset('/'); ?>">homepage</a> instead?</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('script'); ?>
+  <script type="text/javascript" src="<?php echo $_js . 'html5shiv.js'; ?>"></script>
+  <script type="text/javascript" src="<?php echo $_js . 'jQuery.1.11.3.js'; ?>"></script>
+  <script type="text/javascript" src="<?php echo $_js . 'bootstrap.min.js'; ?>"></script>
+  <script type="text/javascript" src="<?php echo $_js . 'migrate.js'; ?>"></script>
+  <script type="text/javascript" src="<?php echo $_js . 'owl.carousel.min.js'; ?>"></script>
+  <script type="text/javascript" src="<?php echo $_js . 'jquery.bxslider.min.js'; ?>"></script>
+  <script type="text/javascript" src="<?php echo $_js . 'jquery.isotope.js'; ?>"></script>
+  <script type="text/javascript" src="<?php echo $_js . 'jquery.prettyPhoto.js'; ?>"></script>
+  <script type="text/javascript" src="<?php echo $_js . 'custom-script.js'; ?>"></script>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('user.main', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

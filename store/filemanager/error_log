@@ -1,0 +1,24 @@
+[18-Nov-2014 06:54:23 UTC] PHP Fatal error:  Uncaught exception 'Exception' with message 'file ../upload/images/vu-sua-bo-hong-traicaycantho.jpg is missing or invalid' in /home/canthofruit/public_html/store/filemanager/include/php_image_magician.php:325
+Stack trace:
+#0 /home/canthofruit/public_html/store/filemanager/include/utils.php(50): imageLib->resizeImage(122, 91, 'crop')
+#1 /home/canthofruit/public_html/store/filemanager/upload.php(85): create_img('../upload/image...', '../thumbs/uploa...', 122, 91)
+#2 {main}
+  thrown in /home/canthofruit/public_html/store/filemanager/include/php_image_magician.php on line 325
+[30-Nov-2014 11:51:41 UTC] PHP Fatal error:  Uncaught exception 'Exception' with message 'file ../upload/images/man-do-xua-can-tho-fruit-L2-unbox.png is missing or invalid' in /home/canthofruit/public_html/store/filemanager/include/php_image_magician.php:325
+Stack trace:
+#0 /home/canthofruit/public_html/store/filemanager/include/utils.php(50): imageLib->resizeImage(122, 91, 'crop')
+#1 /home/canthofruit/public_html/store/filemanager/upload.php(85): create_img('../upload/image...', '../thumbs/uploa...', 122, 91)
+#2 {main}
+  thrown in /home/canthofruit/public_html/store/filemanager/include/php_image_magician.php on line 325
+[30-Nov-2014 11:52:28 UTC] PHP Fatal error:  Uncaught exception 'Exception' with message 'file ../upload/images/man-do-xua-can-tho-fruit-L2-unbox_1.png is missing or invalid' in /home/canthofruit/public_html/store/filemanager/include/php_image_magician.php:325
+Stack trace:
+#0 /home/canthofruit/public_html/store/filemanager/include/utils.php(50): imageLib->resizeImage(122, 91, 'crop')
+#1 /home/canthofruit/public_html/store/filemanager/upload.php(85): create_img('../upload/image...', '../thumbs/uploa...', 122, 91)
+#2 {main}
+  thrown in /home/canthofruit/public_html/store/filemanager/include/php_image_magician.php on line 325
+[30-Nov-2014 11:53:34 UTC] PHP Fatal error:  Uncaught exception 'Exception' with message 'file ../upload/images/man-do-xua-can-tho-fruit-L2-unbox_2.png is missing or invalid' in /home/canthofruit/public_html/store/filemanager/include/php_image_magician.php:325
+Stack trace:
+#0 /home/canthofruit/public_html/store/filemanager/include/utils.php(50): imageLib->resizeImage(122, 91, 'crop')
+#1 /home/canthofruit/public_html/store/filemanager/upload.php(85): create_img('../upload/image...', '../thumbs/uploa...', 122, 91)
+#2 {main}
+  thrown in /home/canthofruit/public_html/store/filemanager/include/php_image_magician.php on line 325
